@@ -1,0 +1,66 @@
+.box{
+    /* position: relative;
+    left: 80px; */
+    width: 500px;
+    height: 300px;
+    border: 2px solid black;
+    margin: 50px;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: row;
+}
+.imagea{
+    width: 240px;
+    height: 250px;
+    margin: 15px;
+    cursor: pointer;
+}
+.textt{
+    width: 250px;
+    height: 250px;
+    font-style: italic;
+    text-align: center;
+    margin: 20px;
+}
+.title{
+    margin: 30px;
+    margin-left: 100px;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.top{
+    border: 2px solid black;
+    border-radius: 20px;
+    margin: 25px;
+    text-align: center;
+}
+.addpost{
+    border: 2px solid black;
+    height: 800px;
+    width: 350px;
+    margin: 30px;
+    text-align: center;
+    background-image: url(https://preview.redd.it/looking-for-different-one-piece-design-elements-for-a-v0-fazc7u7ud1fa1.jpg?width=640&crop=smart&auto=webp&s=5b359c0dd6c8cd3f277a2423118007751ef18116);
+}
+.artpost{
+    text-align: center;
+    
+}
+@media (max-width:750px) {
+    .container{
+        flex-direction: column;
+        align-items: center;
+    }
+    .box{
+        flex-direction: column;
+        width: fit-content;
+        height: fit-content;
+        margin: 20px;
+    }
+    .top{
+        width: fit-content;
+    }
+}

@@ -1,0 +1,19 @@
+.the{
+    position: absolute;
+    top: auto;
+    margin: 13px;
+    transform: rotate(-90deg);
+    font-weight: 600;
+}
+.pos{
+    width: 200px;
+    margin: auto;
+
+}
+.siren{
+    margin: 10px;
+    position: relative;
+    left: 30px;
+    font-size: xx-large;
+    font-weight: bold;
+}

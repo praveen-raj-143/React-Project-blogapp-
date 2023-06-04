@@ -1,0 +1,30 @@
+.latestcontainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.latestitems{
+    width: 300px;
+    height: 400px;
+    margin: 10px;
+    border: 2px solid black;
+    border-radius: 25px;
+    text-align: center;
+}
+.img{
+    width: 280px;
+    height: 200px;
+    background-image: url(https://cdn.telanganatoday.com/wp-content/uploads/2022/11/formula.jpg);
+    background-size: cover;
+    margin: 10px;
+    
+}
+h1{
+    margin: 55px;
+}
+@media (max-width:950px) {
+   .latestcontainer{
+    flex-direction: column;
+    align-items: center;
+   }
+}
