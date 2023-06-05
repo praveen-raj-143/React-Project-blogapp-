@@ -1,5 +1,5 @@
-import React from 'react'
-import Bollydata from '../Details/Bollydata'
+import React, { useEffect, useState } from 'react'
+// import Bollydata from '../Details/Bollydata'
 import './Style.css'
 import top from '../Details/Top'
 import {useNavigate} from 'react-router-dom'
@@ -9,11 +9,17 @@ const Bollywood = () => {
     // console.log(id, item)
     navigate(`/article/${id}`,{state:{data:item}})
   }
+  const [data,setData]=useState([])
+  useEffect(()=>{
+    fetch("http://localhost:4065/bollywood")
+    .then(res=>res.json())
+    .then(child=>setData(child))
+  })
   return (
     <div className='container'>
       <div >
       <h1 className='title'>MOVIES</h1>
-      {Bollydata.map((item)=>{
+      {data.map((item)=>{
         return(
           <div className='box' key={item.id}>
             <div className='imagea'><img src={item.imageurl} alt="not found" onClick={()=>detail(item.id, item)} className='imagea' /></div>

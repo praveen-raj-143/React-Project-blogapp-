@@ -1,5 +1,5 @@
-import React from 'react'
-import tech from '../Details/Techdata'
+import React, { useEffect, useState } from 'react'
+// import tech from '../Details/Techdata'
 import top from '../Details/Top'
 import './Style.css'
 import {useNavigate} from 'react-router-dom'
@@ -9,12 +9,17 @@ const Technology = () => {
 
     navigate(`/article/${id}`,{state:{data:item}})
   }
-  
+  const [data,setData]=useState([])
+  useEffect(()=>{
+    fetch("http://localhost:4065/technology")
+    .then(res=>res.json())
+    .then(child=>setData(child))
+  })
   return (
     <div className='container'>
       <div className='normal'>
       <h1 className='title'>TECHNOLOGY</h1>
-      {tech.map((item)=>{
+      {data.map((item)=>{
         return(
           <div className='box'  key={item.id}>
             <div className='imagea'><img src={item.imageurl} alt="not found" onClick={()=>detail(item.id, item)} className='imagea' /></div>
