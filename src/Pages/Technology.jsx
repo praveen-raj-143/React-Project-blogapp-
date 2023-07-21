@@ -5,24 +5,24 @@ import './Style.css'
 import {useNavigate} from 'react-router-dom'
 const Technology = () => {
   const navigate = useNavigate()
-  const detail=(id, item)=>{
+  const detail=(_id, item)=>{
 
-    navigate(`/article/${id}`,{state:{data:item}})
+    navigate(`/article/${_id}`,{state:{data:item}})
   }
   const [data,setData]=useState([])
   useEffect(()=>{
-    fetch("http://localhost:4065/technology")
+    fetch("https://reactblogbackend-3ubq.onrender.com")
     .then(res=>res.json())
-    .then(child=>setData(child))
+    .then(data=>setData(data))
   })
   return (
     <div className='container'>
       <div className='normal'>
       <h1 className='title'>TECHNOLOGY</h1>
-      {data.map((item)=>{
+      {data.filter((item)=> item.category=== "technology").map((item)=>{
         return(
-          <div className='box'  key={item.id}>
-            <div className='imagea'><img src={item.imageurl} alt="not found" onClick={()=>detail(item.id, item)} className='imagea' /></div>
+          <div className='box'  key={item._id}>
+            <div className='imagea'><img src={item.imageurl} alt="not found" onClick={()=>detail(item._id, item)} className='imagea' /></div>
             <div className='textt'>
               <h2>{item.name}</h2>
               <p>{item.discription}</p>

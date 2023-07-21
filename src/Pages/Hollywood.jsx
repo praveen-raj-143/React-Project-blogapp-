@@ -1,27 +1,28 @@
 import React, { useEffect, useState } from 'react'
-// import Hollydata from '../Details/Hollydata'
+// import tech from '../Details/Techdata'
 import top from '../Details/Top'
+import './Style.css'
 import {useNavigate} from 'react-router-dom'
 const Hollywood = () => {
   const navigate = useNavigate()
-  const detail=(id, item)=>{
+  const detail=(_id, item)=>{
 
-    navigate(`/article/${id}`,{state:{data:item}})
+    navigate(`/article/${_id}`,{state:{data:item}})
   }
   const [data,setData]=useState([])
   useEffect(()=>{
-    fetch("http://localhost:4065/hollywood")
+    fetch("https://reactblogbackend-3ubq.onrender.com")
     .then(res=>res.json())
-    .then(child=>setData(child))
+    .then(data=>setData(data))
   })
   return (
     <div className='container'>
       <div className='normal'>
-      <h1 className='title'>MOVIES</h1>
-      {data.map((item)=>{
+      <h1 className='title'>HOLLYWOOD</h1>
+      {data.filter((item)=> item.category=== "hollywood").map((item)=>{
         return(
-          <div className='box'  key={item.id}>
-            <div className='imagea'><img src={item.imageurl} alt="not found" onClick={()=>detail(item.id, item)} className='imagea' /></div>
+          <div className='box'  key={item._id}>
+            <div className='imagea'><img src={item.imageurl} alt="not found" onClick={()=>detail(item._id, item)} className='imagea' /></div>
             <div className='textt'>
               <h2>{item.name}</h2>
               <p>{item.discription}</p>
@@ -42,6 +43,7 @@ const Hollywood = () => {
       })}
       <div className='addpost'>
         <h1>ADVERTISEMENT</h1>
+        
       </div>
     </div>
     </div>
