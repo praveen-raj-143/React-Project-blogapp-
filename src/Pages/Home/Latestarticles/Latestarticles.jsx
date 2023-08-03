@@ -40,8 +40,13 @@ const Latestarticles = () => {
           </div>
         </div>
       </div>
+      <div className='addmain'>
       <div className='ad' >
         <p>Advertisment</p>
+      </div>
+      <div className='adto' >
+        <p>Advertisment</p>
+      </div>
       </div>
     </div>
     </div>

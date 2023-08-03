@@ -39,7 +39,7 @@
 }
 .addpost{
     border: 2px solid black;
-    height: 800px;
+    height: 650px;
     width: 350px;
     margin: 30px;
     text-align: center;
@@ -62,5 +62,7 @@
     }
     .top{
         width: fit-content;
+        margin: auto;
+        margin-top: 10px;
     }
 }
