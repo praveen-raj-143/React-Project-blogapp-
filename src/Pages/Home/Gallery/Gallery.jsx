@@ -53,8 +53,8 @@ const Gallery = () => {
       {data.filter((item)=> item.category=== "gallery").map((item)=>{
         return(
           <div className='griditem'  key={item._id}>
-            <div className='imagea'><img src={item.imageurl} alt="not found" onClick={()=>detail(item._id, item)} className='imagea' /></div>
-            <div className='textt'>
+            <div className='gridimg'><img src={item.imageurl} alt="not found" onClick={()=>detail(item._id, item)} className='gridimg' /></div>
+            <div className=''>
               <h2>{item.name}</h2>
               <p>{item.discription}</p>
             </div>
